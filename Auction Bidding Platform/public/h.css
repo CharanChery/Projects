@@ -1,0 +1,25 @@
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+.text {
+	width: 40%;
+	padding: 20px;
+}
+
+.image-slider {
+	width: 60%;
+	overflow-y: auto;
+}
+
+.image-slider marquee {
+	width: 100%;
+	height: 100vh;
+}
+
+.image-slider img {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
