@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
     //card
     document.getElementById("cardpayment").addEventListener("click", () => {
-      const newpage = "../Stripe_Payment/Public/checkout.html";
+      const newpage = "../Stripe_Payment/public/checkout.html";
       let fullurl = newpage + "?username=" + encodeURIComponent(urlusername);
       window.location.href = fullurl;
     });
