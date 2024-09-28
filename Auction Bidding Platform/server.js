@@ -29,7 +29,7 @@ app.use("/api/v5/payment", paymentcoins);
 app.use("/api/v5/admin", admin);
 
 app.get("/", async (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/login.html"));
+  res.sendFile(path.join(__dirname, "./public/Home.html"));
 });
 
 const start = async () => {
