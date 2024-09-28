@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(queryString);
   const urlusername = urlParams.get("username");
   const url_product_id = urlParams.get("id");
-  const getcoins = await axios.post("http://localhost:5501/api/v2/getcoins", {
+  const getcoins = await axios.post("https://auction-bidding-platform.onrender.com/api/v2/getcoins", {
     urlusername: urlusername,
   });
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   points.textContent = getcoins.data.data;
 
   let productdetail = await axios.get(
-    "http://localhost:5501/api/v2/getproductdetail",
+    "https://auction-bidding-platform.onrender.com/api/v2/getproductdetail",
     {
       params: {
         productid: url_product_id,
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     let productdetail = await axios.get(
-      "http://localhost:5501/api/v2/getproductdetail",
+      "https://auction-bidding-platform.onrender.com/api/v2/getproductdetail",
       {
         params: {
           productid: url_product_id,
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const currentAmount = parseInt(bidInput.value);
         try {
           const response = await axios.post(
-            "http://localhost:5501/api/v3/adduserProducts",
+            "https://auction-bidding-platform.onrender.com/api/v3/adduserProducts",
             { urlusername, url_product_id, currentAmount }
           );
           if (response.data.data === "notfound") {

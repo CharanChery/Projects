@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const urlusername = urlParams.get("username");
     const notifNum = document.getElementById("notif-num");
     const notification = await axios.post(
-      "http://localhost:5501/api/v3/notificationProducts",
+      "https://auction-bidding-platform.onrender.com/api/v3/notificationProducts",
       {
         urlusername: urlusername,
       }
     );
-    const getcoins = await axios.post("http://localhost:5501/api/v2/getcoins", {
+    const getcoins = await axios.post("https://auction-bidding-platform.onrender.com/api/v2/getcoins", {
       urlusername: urlusername,
     });
     points.textContent = getcoins.data.data;
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           .getElementById("markread")
           .addEventListener("click", async () => {
             const notification = await axios.post(
-              "http://localhost:5501/api/v3/markasread",
+              "https://auction-bidding-platform.onrender.com/api/v3/markasread",
               {
                 urlusername: urlusername,
               }

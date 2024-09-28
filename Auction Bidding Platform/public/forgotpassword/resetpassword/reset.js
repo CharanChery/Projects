@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             console.log(urlusername)
 
             try {
-                const response = await axios.post('http://localhost:5501/api/v1/details/updatepassword', { urlusername, temppassword });
+                const response = await axios.post('https://auction-bidding-platform.onrender.com/api/v1/details/updatepassword', { urlusername, temppassword });
                 if(response.data.status){
                     window.location.href ='../../login.html'
                 }

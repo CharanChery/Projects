@@ -29,7 +29,7 @@ sendbutton.addEventListener('click',async(e)=>{
 
             // Set the time to 12:00 PM for the future date
             futureDate.setHours(12, 0, 0, 0);
-            const response = await axios.post('http://localhost:5501/api/v2/addProducts',{
+            const response = await axios.post('https://auction-bidding-platform.onrender.com/api/v2/addProducts',{
                 "name":pname.value,
                 "description": pdescription.value,
                 "initial_price":pprice.value,

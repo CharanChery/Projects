@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const urlusername = urlParams.get("username");
 
     const leftproducts = await axios.get(
-      "http://localhost:5501/api/v2/dashboard"
+      "https://auction-bidding-platform.onrender.com/api/v2/dashboard"
     );
     //console.log("leftproducts , ",leftproducts)
     try {
@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const urlusername = urlParams.get("username");
       const notifNum = document.getElementById("notif-num");
       const notification = await axios.post(
-        "http://localhost:5501/api/v3/notificationProducts",
+        "https://auction-bidding-platform.onrender.com/api/v3/notificationProducts",
         {
           urlusername: urlusername,
         }
       );
       const getcoins = await axios.post(
-        "http://localhost:5501/api/v2/getcoins",
+        "https://auction-bidding-platform.onrender.com/api/v2/getcoins",
         { urlusername: urlusername }
       );
       //console.log("checking email", getcoins.data.data)
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     const getrightproducts = await axios.get(
-      "http://localhost:5501/api/v3/getUserProducts",
+      "https://auction-bidding-platform.onrender.com/api/v3/getUserProducts",
       {
         params: {
           username: urlusername,
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     demoproducts.forEach(async (productId) => {
       try {
         const deleteresponse = await axios.post(
-          "http://localhost:5501/api/v3/deleteProducts",
+          "https://auction-bidding-platform.onrender.com/api/v3/deleteProducts",
           { urlusername: urlusername, productId: productId }
         );
 
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (deleteresponse.data.msg === "matched") {
           let productdetail = await axios.get(
-            "http://localhost:5501/api/v2/getproductdetail",
+            "https://auction-bidding-platform.onrender.com/api/v2/getproductdetail",
             {
               params: {
                 productid: productId,

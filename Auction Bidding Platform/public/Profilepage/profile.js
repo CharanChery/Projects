@@ -4,9 +4,9 @@ async function fetchData() {
   const urlusername = urlParams.get("username");
   console.log(urlusername); // charan
   try {
-    const getcoin = await axios.post('http://localhost:5501/api/v2/getcoins',{urlusername: urlusername});
+    const getcoin = await axios.post('https://auction-bidding-platform.onrender.com/api/v2/getcoins',{urlusername: urlusername});
     points.textContent = getcoin.data.data
-    const response = await axios.get('http://localhost:5501/api/v2/getProfiledetails/',{
+    const response = await axios.get('https://auction-bidding-platform.onrender.com/api/v2/getProfiledetails/',{
     params:{
         username: urlusername
     }

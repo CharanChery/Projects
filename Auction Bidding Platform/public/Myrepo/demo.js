@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let points = document.getElementById("points");
 
     const getrightproducts = await axios.get(
-      "http://localhost:5501/api/v3/getUserProducts",
+      "https://auction-bidding-platform.onrender.com/api/v3/getUserProducts",
       {
         params: {
           username: urlusername,
@@ -23,20 +23,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     demoproducts.forEach(async (productId) => {
       try {
         const deleteresponse = await axios.post(
-          "http://localhost:5501/api/v3/deleteProducts",
+          "https://auction-bidding-platform.onrender.com/api/v3/deleteProducts",
           { urlusername: urlusername, productId: productId }
         );
 
         //updating coins
         const getcoins = await axios.post(
-          "http://localhost:5501/api/v2/getcoins",
+          "https://auction-bidding-platform.onrender.com/api/v2/getcoins",
           { urlusername: urlusername }
         );
         points.textContent = getcoins.data.data;
 
         if (deleteresponse.data.msg === "matched") {
           let productdetail = await axios.get(
-            "http://localhost:5501/api/v2/getproductdetail",
+            "https://auction-bidding-platform.onrender.com/api/v2/getproductdetail",
             {
               params: {
                 productid: productId,

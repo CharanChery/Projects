@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:5501/Stripe_Payment/done.html",
+        return_url: "https://auction-bidding-platform.onrender.com/Stripe_Payment/done.html",
       },
 
     });
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       //   amount: amount 
       // }));
       // Redirect to done.html
-      window.location.href = "http://localhost:5501/Stripe_Payment/done.html";
+      window.location.href = "https://auction-bidding-platform.onrender.com/Stripe_Payment/done.html";
       //http://localhost:5501/Stripe_Payment/done.html?payment_intent=pi_3P8XJ3SGD6nuXoPY00U6iXba&payment_intent_client_secret=pi_3P8XJ3SGD6nuXoPY00U6iXba_secret_vHq1eN6Bi2sQeP9PRuZCDiLSO&redirect_status=succeeded
     // Redirect after a delay
     // setTimeout(() => {

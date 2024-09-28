@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const urlusername = urlParams.get("username");
-    const getcoin = await axios.post('http://localhost:5501/api/v2/getcoins',{urlusername: urlusername});
+    const getcoin = await axios.post('https://auction-bidding-platform.onrender.com/api/v2/getcoins',{urlusername: urlusername});
     points.textContent = getcoin.data.data
     console.log("coins",points.textContent)
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const notifNum = document.getElementById("notif-num");
     try {
       const notification = await axios.post(
-        "http://localhost:5501/api/v3/notificationProducts",
+        "https://auction-bidding-platform.onrender.com/api/v3/notificationProducts",
         {
           urlusername: urlusername,
         }
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     console.log("before")
     const getrightproducts = await axios.get(
-      "http://localhost:5501/api/v3/getUserProducts",
+      "https://auction-bidding-platform.onrender.com/api/v3/getUserProducts",
       {
         params: {
           username: urlusername,
@@ -80,19 +80,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     demoproducts.forEach(async (productId) => {
       try {
         const deleteresponse = await axios.post(
-          "http://localhost:5501/api/v3/deleteProducts",
+          "https://auction-bidding-platform.onrender.com/api/v3/deleteProducts",
           { urlusername: urlusername, productId: productId }
         );
 
         //updating coins
         const getcoins = await axios.post(
-          "http://localhost:5501/api/v2/getcoins",
+          "https://auction-bidding-platform.onrender.com/api/v2/getcoins",
           { urlusername: urlusername }
         );
         points.textContent = getcoins.data.data;
         if (deleteresponse.data.msg === "matched") {
           let productdetail = await axios.get(
-            "http://localhost:5501/api/v2/getproductdetail",
+            "https://auction-bidding-platform.onrender.com/api/v2/getproductdetail",
             {
               params: {
                 productid: productId,
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       myproducts.forEach(async (productId) => {
         try {
           let productdetail = await axios.get(
-            "http://localhost:5501/api/v2/getproductdetail",
+            "https://auction-bidding-platform.onrender.com/api/v2/getproductdetail",
             {
               params: {
                 productid: productId,

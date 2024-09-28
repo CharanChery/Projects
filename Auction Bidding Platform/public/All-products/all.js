@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Array of product data (name, image URL, new price, old price)
   try {
     const leftproducts = await axios.get(
-      "http://localhost:5501/api/v2/dashboard"
+      "https://auction-bidding-platform.onrender.com/api/v2/dashboard"
     );
     const products = leftproducts.data.data;
 
@@ -81,14 +81,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(queryString);
     const urlusername = urlParams.get("username");
 
-    const getcoins = await axios.post("http://localhost:5501/api/v2/getcoins", {
+    const getcoins = await axios.post("https://auction-bidding-platform.onrender.com/api/v2/getcoins", {
       urlusername: urlusername,
     });
     points.textContent = getcoins.data.data;
 
     const notifNum = document.getElementById("notif-num");
     const notification = await axios.post(
-      "http://localhost:5501/api/v3/notificationProducts",
+      "https://auction-bidding-platform.onrender.com/api/v3/notificationProducts",
       {
         urlusername: urlusername,
       }

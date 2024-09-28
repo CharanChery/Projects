@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById('sendotp').addEventListener('click',async (e)=>{
         e.preventDefault()
         try {
-            const response= await axios.post('http://localhost:5501/api/v1/details/sendforgototp', {
+            const response= await axios.post('https://auction-bidding-platform.onrender.com/api/v1/details/sendforgototp', {
                 "email": email.value
             });
             
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
         if ((otp.value).toString().length ===6) {
             try {
-                const response = await axios.post('http://localhost:5501/api/v1/details/forgotpassword', { tempmail, tempotp });
+                const response = await axios.post('https://auction-bidding-platform.onrender.com/api/v1/details/forgotpassword', { tempmail, tempotp });
                 console.log(response.data)
                 if(response.data.statuscode){
                     text.innerText='Verification done'

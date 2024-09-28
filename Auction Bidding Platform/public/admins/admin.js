@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.main-content').appendChild(h1)
         document.querySelector('.main-content').appendChild(input)
 
-        const response = await axios.get('http://localhost:5501/api/v5/admin/getallusersinfo')
+        const response = await axios.get('https://auction-bidding-platform.onrender.com/api/v5/admin/getallusersinfo')
         //console.log(response.data.msg)
         const data = response.data.msg
         //console.log(data)
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.main-content').appendChild(input)
 
 
-        const response = await axios.get('http://localhost:5501/api/v5/admin/getallitemsinfo')
+        const response = await axios.get('https://auction-bidding-platform.onrender.com/api/v5/admin/getallitemsinfo')
         const data= response.data.msg
         //console.log(data)
         displayallitems(data)
@@ -128,7 +128,7 @@ function displayallusers(data){
 
         button.addEventListener('click',async()=>{
             document.getElementById(item._id).style.display = 'none'
-            const delproduct = await axios.post('http://localhost:5501/api/v5/admin/deleteuser',{url_user_id: item._id});
+            const delproduct = await axios.post('https://auction-bidding-platform.onrender.com/api/v5/admin/deleteuser',{url_user_id: item._id});
             console.log(delproduct.data.msg)
 
         })
@@ -174,7 +174,7 @@ function displayallitems(data){
 
         button.addEventListener('click',async()=>{
             document.getElementById(item._id).style.display = 'none'
-            const delproduct = await axios.post('http://localhost:5501/api/v5/admin/deleteproducts',{url_product_id: item._id});
+            const delproduct = await axios.post('https://auction-bidding-platform.onrender.com/api/v5/admin/deleteproducts',{url_product_id: item._id});
             console.log(delproduct.data.msg)
         })
     })
