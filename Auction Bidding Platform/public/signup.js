@@ -16,7 +16,7 @@ username.addEventListener("input", async (event) => {
   const Username = event.target.value;
   try {
     const response = await axios.post(
-      "http://localhost:5501/api/v1/details/checkUsername",
+      "https://auction-bidding-platform.onrender.com/api/v1/details/checkUsername",
       {
         username: Username,
       }
@@ -44,7 +44,7 @@ email.addEventListener("input", async (event) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:5501/api/v1/details/checkEmail",
+      "https://auction-bidding-platform.onrender.com/api/v1/details/checkEmail",
       {
         email: Email,
       }
@@ -69,7 +69,7 @@ otpbutton.addEventListener("click", async (e) => {
   e.preventDefault();
   try {
     const response = await axios.post(
-      "http://localhost:5501/api/v1/details/verify-otp",
+      "https://auction-bidding-platform.onrender.com/api/v1/details/verify-otp",
       {
         email: email.value,
       }
@@ -101,7 +101,7 @@ signupButton.addEventListener("click", async (e) => {
   } else if (password1.value === password2.value) {
     try {
       const response = await axios.post(
-        "http://localhost:5501/api/v1/details/signup",
+        "https://auction-bidding-platform.onrender.com/api/v1/details/signup",
         {
           username: username.value,
           email: email.value,

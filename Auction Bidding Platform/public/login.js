@@ -1,6 +1,6 @@
 const p_wrongusername = document.getElementById("p_wrongusername");
 const submit = document.getElementById("loginButton");
-const url = "http://localhost:5501/api/v1/details/login";
+const url = "https://auction-bidding-platform.onrender.com/api/v1/details/login";
 
 submit.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -10,7 +10,7 @@ submit.addEventListener("click", async (e) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:5501/api/v1/details/login",
+      "https://auction-bidding-platform.onrender.com/api/v1/details/login",
       { name, password }
     );
     // console.log(response)
@@ -26,7 +26,7 @@ submit.addEventListener("click", async (e) => {
         p_wrongusername.style.color = "green";
 
         const userResponse = await axios.post(
-          "http://localhost:5501/api/v1/details/getusername",
+          "https://auction-bidding-platform.onrender.com/api/v1/details/getusername",
           {
             email: name,
           }
