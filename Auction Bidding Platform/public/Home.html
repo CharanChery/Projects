@@ -9,7 +9,13 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url("https://i.pinimg.com/originals/e6/e6/ec/e6e6ec515234bff635b4969235996094.jpg");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #a657e67e;
+        background-size: cover;
+        overflow:hidden;
       }
       header {
         background-color: rgba(255, 255, 255, 0.679);
@@ -19,47 +25,54 @@
         text-align: right;
         justify-content: space-between;
         align-items: center;
+        width: 98%;
+        position: absolute;
+        top: 0;
       }
 
       header img {
-    width: 250px;
-    height: 70px;
-    margin-left: 25px;
-  }
+        width: 250px;
+        height: 70px;
+        margin-left: 25px;
+      }
 
-  .navigation a {
-    color: #9b02027e;
-    position: relative;
-    color: #030000;
-    border-bottom: 2px solid transparent;
-    transition: all 0.5s ease-in-out;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-  }
-  .navigation a:hover {
-    color: #bb841e; /* Change color on hover */
-    border-bottom: 2px solid black;
-  }
-  .Welcome {
-    color: white;
-    margin-top: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-family: "Montserrat";
-  }
- 
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-</style>
+      .navigation a {
+        color: #9b02027e;
+        position: relative;
+        color: #030000;
+        border-bottom: 2px solid transparent;
+        transition: all 0.5s ease-in-out;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s;
+        cursor:pointer;
+      }
+      .navigation a:hover {
+        color: #bb841e;
+        border-bottom: 2px solid black;
+      }
+
+      .Welcome {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+        font-family: "Montserrat";
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100.67%;
+        margin-bottom: -15px;
+      }
     </style>
   </head>
   <body>
@@ -74,31 +87,43 @@
           <a href="Home.html">Home</a>
           <a id="Signup">SignUp</a>
           <a id="Login">Login</a>
-          <!-- <a href="{% url 'Sign up' %}">Sign Up</a>
-          <a href="{% url 'Sign in' %}">Sign in</a>
-          <a href="#">Contact Us</a> -->
         </p>
       </div>
     </header>
     <div class="Welcome">
-      
       <h1>
-        <strong>Welcome to our Auction Bidding Website!
-          <br>
-        </strong> Are you looking to buy or sell items through online auctions? <br>
-        You've come to the right place! Our website offers a wide variety of items for bidding.<br />
-        Whether you're a seasoned bidder or new to the world of online auctions, <br>
-        our website makes it easy to find and bid on items that interest you. <br>
-        With our user-friendly interface and secure payment system, <br>
-        you can bid with confidence and enjoy a hassle-free bidding experience.<br />
-        <!-- <b style="font-family: monotype corsiva">So start by <a id="SignUp">Signing up</a> into the website.</b> -->
+        <strong>Welcome to our Auction Bidding Website!<br /></strong>
       </h1>
+      <p>
+        Welcome to AuctionPro! Unlock the Power of Online Auctions. At
+        AuctionPro, we connect buyers and sellers in an exciting, fast-paced
+        bidding environment where everyone can find something unique. Whether
+        you're a collector, treasure hunter, or seller looking to reach a global
+        audience, our platform is designed to meet your needs.
+      </p>
+      <h2>Why to Choose our Platform?</h2>
+      <p>
+        <strong>1. Wide Variety of Items:</strong> From antiques and
+        collectibles to electronics, fashion, and rare artifacts, AuctionPro
+        hosts an ever-expanding range of categories. You’ll always find
+        something interesting to bid on or sell.
+      </p>
+      <p>
+        <strong>2. User-Friendly Interface:</strong> Our simple, intuitive
+        design makes it easy for anyone to start bidding or selling. You can
+        explore auctions, track your bids, and manage your listings all in one
+        place, hassle-free.
+      </p>
+      <p>
+        <strong>3. Secure & Transparent Transactions: </strong> Your security is
+        our top priority. With encrypted payment options and transparent
+        bidding, you can buy and sell with confidence. Every transaction is
+        recorded to ensure a smooth and safe experience.
+      </p>
     </div>
 
     <footer>
       <p>&copy; 2024 Auction Bidding. All rights reserved.</p>
     </footer>
-    <script src="home.js">
-    </script>
   </body>
 </html>
