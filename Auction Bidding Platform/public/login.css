@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -5,6 +11,44 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  padding: 2px;
+  background-color: rgba(245, 245, 245, 0.603);
+  color: black;
+  z-index: 1000;
+}
+.logo {
+  height: 50px;
+  margin-left: 25px;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.navigation ul {
+  display: flex;
+  list-style-type: none;
+  margin-left: 600px;
+  margin-top: 15px;
+}
+.navigation ul li {
+  margin-left: 50px;
+}
+.navigation ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+.navigation ul li a:hover {
+  color: blueviolet;
+  text-decoration: underline;
 }
 
 /* .login-container {
@@ -84,6 +128,7 @@ body {
     );
 }
 
+
 #radius-shape-1 {
   height: 220px;
   width: 220px;
@@ -93,8 +138,9 @@ body {
   background: radial-gradient(#a17fb569, #9a09ee);
   overflow: hidden;
   position: absolute; /* Make sure the position is absolute for proper movement */
-  animation: moveAnimation1 15s infinite; /* Play the animation infinitely */
+animation: moveAnimation1 15s infinite; /* Play the animation infinitely */
 }
+
 @keyframes moveAnimation1 {
   0% {
     top: 110px;
